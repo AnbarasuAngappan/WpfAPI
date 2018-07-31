@@ -1,0 +1,31 @@
+﻿<Window x:Class="WpfAPI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfAPI"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30*"/>
+            <RowDefinition Height="202*"/>
+        </Grid.RowDefinitions>
+
+        <DataGrid Grid.Row="1" Name="dataEmployeeDetails" AutoGenerateColumns="False" ColumnWidth="*"  RowBackground="WhiteSmoke"  
+                   CellEditEnding="dataGridStudent_CellEditEnding" RowEditEnding="dataGridStudent_RowEditEnding"  
+                   SelectionChanged="dataGridStudent_SelectionChanged" Background="WhiteSmoke" FontSize="15">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="EmployeeID" Binding="{Binding EmployeeID}" Width="85"></DataGridTextColumn>
+                <DataGridTextColumn Header="Name" Binding="{Binding Name}" Width="160"></DataGridTextColumn>
+                <DataGridTextColumn Header="Position" Binding="{Binding Position}" Width="*"></DataGridTextColumn>
+                <DataGridTextColumn Header="Age" Binding="{Binding Age}" Width="80"></DataGridTextColumn>
+                <DataGridTextColumn Header="Salary" Binding="{Binding Salary}" Width="170"></DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Content="Load Records.."   
+            x:Name="btnRefreshRecord" Grid.Row="0"  
+            FontSize="16" HorizontalAlignment="Right" Click="btnRefreshRecord_Click" Cursor="Hand" Background="#FF8CCD03" Foreground="White" Margin="0,10,10,10" Width="144"/>
+    </Grid>
+
+</Window>
